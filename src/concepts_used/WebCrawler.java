@@ -20,7 +20,7 @@ public class WebCrawler {
 			try {
 				if(URLs.add(link))
 				{
-					System.out.println(link);
+//					System.out.println(link);
 				}
 				Document document = Jsoup.connect(link).get();
 				//getting html data of the links and  storing them locally
@@ -41,16 +41,12 @@ public class WebCrawler {
 				}
 			}catch(Exception e)
 			{
-				System.err.println("Error: Message"+e.getMessage()+" For URL="+link);
+//				System.err.println("Error: Message"+e.getMessage()+" For URL="+link);
 			}
 		}
+		System.out.println("Gone through the Website");
+
 	}
-	
-	public static void main(String args[]) throws Exception
-	{
-		WebCrawler obj=new WebCrawler();
-		obj.crawlLinks("https://www.uwindsor.ca", 0);
-	}
-	
+
 
 }

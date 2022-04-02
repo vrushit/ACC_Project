@@ -21,7 +21,7 @@ public class ParseData {
 	}
 	public void fetchFiles() throws IOException
 	{
-		File htmlFolder=new File("src/res/html");
+		File htmlFolder=new File("src/saved_html_files");
 		File[] fileList = htmlFolder.listFiles();
 		
 		for(File file: fileList)
