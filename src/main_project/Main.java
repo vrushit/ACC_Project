@@ -1,6 +1,7 @@
 package main_project;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import concepts_used.BoyerMoore;
@@ -14,6 +15,7 @@ public class Main {
 
 		WebCrawler webCrawlerObj = new WebCrawler();
 		ParseData parseDatatoText = new ParseData();
+		HashMap<Integer, String> urlHMap = new HashMap<Integer, String>();
 		BoyerMoore bmObj = new BoyerMoore("");
 		Scanner input = new Scanner(System.in);
 		String urlToWork;
@@ -23,10 +25,10 @@ public class Main {
 		System.out.println("=====================Welcome to Our Web Search Engine========================");
 		System.out.println();
 		System.out.println("Please Enter your Website URl which you want to work with: ");
-//		urlToWork = input.nextLine();
+		urlToWork = input.nextLine();
 		System.out.println("Processing your request, Please wait for some time");
-//		webCrawlerObj.crawlLinks(urlToWork, 0);
-//		parseDatatoText.fetchFiles();
+		webCrawlerObj.crawlLinks(urlToWork, 0);
+		parseDatatoText.fetchFiles();
 		System.out.println("Done you are all good to go....");
 		System.out.println();
 		System.out.println();
@@ -70,6 +72,7 @@ public class Main {
 		        
 		        case 4:
 		        	System.out.println("Please select the index Number of one of the pages mentioned below ");
+		        	System.out.println(webCrawlerObj.mapUrl()); 
 		        	break;
 		        
 		        default:
