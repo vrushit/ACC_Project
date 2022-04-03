@@ -1,9 +1,4 @@
 package concepts_used;
-
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 import java.util.HashMap;
 import java.util.Map;
 
@@ -98,8 +93,6 @@ public class LRUCache<T> {
 			node.next = front;
 			front.prev = node;
 			front = node;
-			
-			
 		}
 
 		private void removeNodeFromRear() {
