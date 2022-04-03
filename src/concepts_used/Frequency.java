@@ -114,9 +114,9 @@ public class Frequency
           return list;
      }
      
-     public static void main(String args[])
+     public static void frequencyAnalysis()
      {
- 		File folder = new File("src/text_files");
+    	 File folder = new File("src/text_files");
 
     	 final String regex = "\\b\\w{4,10}\\b";
          final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
@@ -169,4 +169,5 @@ public class Frequency
          System.out.println(mainMap.get(array[array.length-5]));
    
      }
+
 }

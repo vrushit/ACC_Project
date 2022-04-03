@@ -6,6 +6,8 @@ public class content {
 
 	public static void main(String[] args) {
 		
+		Scanner input=new Scanner(System.in);
+		
 		System.out.println();
 		System.out.println();
 		System.out.println();
@@ -15,38 +17,65 @@ public class content {
 		System.out.println();
 		System.out.println();
 		System.out.println("1. Search for a Word: ");
+		System.out.println();
 		System.out.println("2. Most Frequently used Words: ");
+		System.out.println();
 		System.out.println("3. Store some Webpages for later use");
+		System.out.println();
 		System.out.println("4. Open up Web Page in browser");
+		System.out.println();
 		System.out.println("5. Exit");
+		System.out.println();
+		
+
+		System.out.println("Please Enter your choice: ");
+		int selection = input.nextInt();
+
+		while (selection!=5)
+		{
+			System.out.println();
+			System.out.println("1. Search for a Word: ");
+			System.out.println();
+			System.out.println("2. Most Frequently used Words: ");
+			System.out.println();
+			System.out.println("3. Store some Webpages for later use");
+			System.out.println();
+			System.out.println("4. Open up Web Page in browser");
+			System.out.println();
+			System.out.println("5. Exit");
+			System.out.println();	
+			
+		   switch(selection){
+		        case 1:
+		           System.out.println("Searching for your word.....!!!");
+		           break;
+
+		        case 2:
+		           System.out.println("Most Frequenctly used Words are"); 
+		           break;
+
+		        case 3:
+		           System.out.println("Opening Your own storage space");
+		           break;
+		        
+		        case 4:
+		        	System.out.println("Please select the index Number of one of the pages mentioned below ");
+		        	break;
+		        
+		        default:
+		        	System.out.println("Oops, Please Enter valid Input ");
+		        
+		      }
+			  System.out.println("New choice: ");
+		      selection = input.nextInt();
+		 }
 		System.out.println();
 		System.out.println("We hope you found what you were Searching for!!! Come Back soon");
 		System.out.println("=============================================================================");
 		System.out.println();
 	
 		
-		System.out.println("Hello");
-		Scanner input=new Scanner(System.in);
-		int selection = input.nextInt();
-
-		while (selection<4)
-		{
-		   switch(selection){
-		        case 1:
-		           System.out.println("Please enter amount");
-		           break;
-
-		        case 2:
-		           System.out.println("Enter ID number"); 
-		           break;
-
-		        case 3:
-		           System.out.println("Enter amount to be credited");
-		           break;
-		      }
-		      System.out.println("1. Transfer\n2.Check balance\n3.Recharge");
-		      selection = input.nextInt();
-		 }
+		
 	}
 
 }
