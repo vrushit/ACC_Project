@@ -9,15 +9,13 @@ public class Caching {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
 		LRUCache<Integer> cache = new LRUCache<>(3);
-		
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int choice = 1;
 		
 		while(choice != 0)
 		{
-			System.out.println("1: Put\n2: Get\n0: Exit");
+			System.out.println("1: Add Website\n2: Get Website\n0: Exit");
 			choice = Integer.parseInt(br.readLine());
 			String key;
 			int value;

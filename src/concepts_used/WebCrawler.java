@@ -44,7 +44,6 @@ public class WebCrawler {
 //				System.err.println("Error: Message"+e.getMessage()+" For URL="+link);
 			}
 		}
-		System.out.println("Gone through the Website");
 
 	}
 
