@@ -7,15 +7,13 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import textprocessing.BruteForceMatch;
-import textprocessing.In;
 
 public class ParseData {
 	public void convertHTMLtoTxt(File file) throws IOException
 	{
 		Document docu = Jsoup.parse(file,"UTF-8");
 		String textInHtm = docu.text();
-		FileWriter fileObj=new FileWriter("src/res/text/"+file.getName());
+		FileWriter fileObj=new FileWriter("src/text_files/"+file.getName() + ".txt");
 		fileObj.write(textInHtm);
 		fileObj.close();
 	}

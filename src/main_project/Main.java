@@ -1,14 +1,17 @@
 package main_project;
 
+import java.io.IOException;
 import java.util.Scanner;
 
+import concepts_used.ParseData;
 import concepts_used.WebCrawler;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		WebCrawler webCrawlerObj = new WebCrawler();
+		ParseData parseDatatoText = new ParseData();
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -17,6 +20,7 @@ public class Main {
 		urlToWork = input.nextLine();
 		
 		webCrawlerObj.crawlLinks(urlToWork, 0);
+		parseDatatoText.fetchFiles();
 		
 	}
 
