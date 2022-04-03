@@ -20,8 +20,10 @@ public class Main {
 		urlToWork = input.nextLine();
 		
 		webCrawlerObj.crawlLinks(urlToWork, 0);
+		System.out.println("Gone through the Website");
 		parseDatatoText.fetchFiles();
 		
 	}
+	
 
 }
