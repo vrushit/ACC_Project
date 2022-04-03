@@ -1,10 +1,16 @@
 package concepts_used;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.*;
+
 public class OpenBrowser {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public void openInBrowser(String urlLink) throws IOException, URISyntaxException
+	{
+		Desktop desk = Desktop.getDesktop();
+		desk.browse(new URI(urlLink));
 	}
+
 
 }
