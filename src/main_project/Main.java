@@ -1,6 +1,7 @@
 package main_project;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -38,15 +39,17 @@ public class Main {
 		System.out.println();
 		System.out.println("3. Store some Webpages for later use");
 		System.out.println();
-		System.out.println("4. Open up Web Page in browser");
+		System.out.println("4. Search for any Word Patterns");
 		System.out.println();
-		System.out.println("5. Exit");
+		System.out.println("5. Open up Web Page in browser");
+		System.out.println();
+		System.out.println("6. Exit");
 		System.out.println();
 		
 		System.out.println("Please Enter your choice: ");
 		int selection = input.nextInt();
 
-		while (selection!=5)
+		while (selection!=6)
 		{
 			
 		   switch(selection){
@@ -68,12 +71,18 @@ public class Main {
 
 		        case 3:
 		           System.out.println("Opening Your own storage space");
+		           
 		           break;
 		        
 		        case 4:
-		        	System.out.println("Please select the index Number of one of the pages mentioned below ");
-		        	System.out.println(webCrawlerObj.mapUrl()); 
 		        	break;
+		        
+		        case 5:
+		        	System.out.println("Please select the index Number of one of the pages mentioned below ");
+		        	HashMap<Integer, String> map = webCrawlerObj.mapUrl(); 
+		        	System.out.println(Arrays.asList(map));
+		        	break;
+		        	
 		        
 		        default:
 		        	System.out.println("Oops, Please Enter valid Input ");
@@ -97,18 +106,7 @@ public class Main {
 		System.out.println();
 		System.out.println("We hope you found what you were Searching for!!! Come Back soon");
 		System.out.println("=============================================================================");
-		System.out.println();
-	
-		
-		
-
-
-
-
-		
-		
-		
-		
+		System.out.println();	
 
 	}
 
