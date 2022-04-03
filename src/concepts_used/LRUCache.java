@@ -16,7 +16,7 @@ public class LRUCache<T> {
 		this.size = 0;
 	}
 
-	public T get(final String key) {
+	public String get(final String key) {
 		Node node = hashMap.get(key);
 		if (node == null) {
 			return null;
@@ -25,10 +25,10 @@ public class LRUCache<T> {
 		return hashMap.get(key).value;
 	}
 
-	public void put(final String key, final T value) {
+	public void put(final String key, final String value) {
 		Node currentNode = hashMap.get(key);
 		if (currentNode != null) {
-			currentNode.value = value;
+			currentNode.value = (String) value;
 			internalQueue.modeNodeToFront(currentNode);
 		}
 
@@ -49,12 +49,12 @@ public class LRUCache<T> {
 
 	private class Node {
 		String key;
-		T value;
+		String value;
 		Node next, prev;
 
-		public Node(final String key, final T value) {
+		public Node(final String key, final String value2) {
 			this.key = key;
-			this.value = value;
+			this.value = value2;
 			this.next = null;
 			this.prev = null;
 		}

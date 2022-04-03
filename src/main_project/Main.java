@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import concepts_used.BoyerMoore;
+import concepts_used.BoyerMooreSearch;
+import concepts_used.Caching;
 import concepts_used.Frequency;
 import concepts_used.ParseData;
 import concepts_used.WebCrawler;
@@ -17,7 +18,9 @@ public class Main {
 		WebCrawler webCrawlerObj = new WebCrawler();
 		ParseData parseDatatoText = new ParseData();
 		HashMap<Integer, String> urlHMap = new HashMap<Integer, String>();
-		BoyerMoore bmObj = new BoyerMoore("");
+		BoyerMooreSearch bmObj = new BoyerMooreSearch();
+		Caching cacheObj = new Caching();
+		
 		Scanner input = new Scanner(System.in);
 		String urlToWork;
 		System.out.println();
@@ -26,10 +29,10 @@ public class Main {
 		System.out.println("=====================Welcome to Our Web Search Engine========================");
 		System.out.println();
 		System.out.println("Please Enter your Website URl which you want to work with: ");
-		urlToWork = input.nextLine();
-		System.out.println("Processing your request, Please wait for some time");
-		webCrawlerObj.crawlLinks(urlToWork, 0);
-		parseDatatoText.fetchFiles();
+//		urlToWork = input.nextLine();
+//		System.out.println("Processing your request, Please wait for some time");
+//		webCrawlerObj.crawlLinks(urlToWork, 0);
+//		parseDatatoText.fetchFiles();
 		System.out.println("Done you are all good to go....");
 		System.out.println();
 		System.out.println();
@@ -56,11 +59,10 @@ public class Main {
 		        case 1:
 		           System.out.println();	 
 		           String wordSearch;
-		   		   System.out.println("Enter the Word: ");
-		   		   wordSearch = input.nextLine();
+		   		   System.out.println("Enter the Word you want to search: ");
+		   		   wordSearch = input.next();
+		   		   System.out.println();
 			   		bmObj.boyerMooreConcept(wordSearch);
-			           System.out.println("Searching for your word.....!!!");
-			   		System.out.println("Searching complete");
 		           break;
 
 		        case 2:
@@ -70,11 +72,12 @@ public class Main {
 		           break;
 
 		        case 3:
-		           System.out.println("Opening Your own storage space");
-		           
+		           System.out.println("Opening Your own storage space: ");
+		           cacheObj.lruCache();
 		           break;
 		        
 		        case 4:
+		        	System.out.println();
 		        	break;
 		        
 		        case 5:
