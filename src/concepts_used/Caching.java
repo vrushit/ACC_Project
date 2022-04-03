@@ -13,6 +13,7 @@ public class Caching {
 
 		int choice = 1;
 		System.out.println("=======================Your Temporary Storage Space===================");
+		System.out.println();
 		System.out.println("Add Website Links to be used later or in your work ");
 		while (choice != 0) {
 			System.out.println("1: Add Links\n2: Get Previously Stored Links\n0: Exit");
@@ -21,31 +22,37 @@ public class Caching {
 			String value;
 			switch (choice) {
 			case 1:
-				System.out.println("Enter Key: ");
+				System.out.println("Enter Key/Index: ");
 				key = br.readLine();
-				System.out.println("Enter Value: ");
+				System.out.println("Enter Your Link: ");
 				value = br.readLine();
 				cache.put(key, value);
-				System.out.println("Inserted\n");
+				System.out.println();
+				System.out.println("Link Inserted\n");
+				System.out.println();
 				break;
 
 			case 2:
-				System.out.println("Enter Key: ");
+				System.out.println("Enter Key/Index: ");
 				key = br.readLine();
 				String strValue = "None";
 				if(cache.get(key)!= null)
 				{
 				strValue = cache.get(key).toString();
 				}
+				System.out.println();
 				System.out.println("Value is: " + strValue);
+				System.out.println();
 				break;
 
 			default:
+				System.out.println();
 				System.out.println("Exit");
+				System.out.println();
 
 			}
 		}
-		
+		System.out.println();
 		System.out.println("=======================Your Temporary Storage Space===================");
 
 

@@ -73,6 +73,7 @@ public class Main {
 
 		        case 3:
 		           System.out.println("Opening Your own storage space: ");
+		           System.out.println();
 		           cacheObj.lruCache();
 		           break;
 		        
