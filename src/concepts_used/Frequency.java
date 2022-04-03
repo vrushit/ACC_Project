@@ -155,18 +155,23 @@ public class Frequency
         	 array[i] = itr.next();
          }
          sort(array, 0, array.length - 1);
-         
-         System.out.println("Top Frequency for words: ");
          System.out.println();
-         System.out.println(mainMap.get(array[array.length-1]));
+         System.out.println("==============================================================");
          System.out.println();
-         System.out.println(mainMap.get(array[array.length-2]));
+         System.out.println(" Most Frequently used words: ");
          System.out.println();
-         System.out.println(mainMap.get(array[array.length-3]));
+         System.out.println(" " + mainMap.get(array[array.length-1]));
          System.out.println();
-         System.out.println(mainMap.get(array[array.length-4]));
+         System.out.println(" " + mainMap.get(array[array.length-2]));
          System.out.println();
-         System.out.println(mainMap.get(array[array.length-5]));
+         System.out.println(" " + mainMap.get(array[array.length-3]));
+         System.out.println();
+         System.out.println(" " + mainMap.get(array[array.length-4]));
+         System.out.println();
+         System.out.println(" " + mainMap.get(array[array.length-5]));
+         System.out.println();
+         System.out.println("================================================================");
+         System.out.println();
    
      }
 

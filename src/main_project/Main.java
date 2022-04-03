@@ -23,10 +23,11 @@ public class Main {
 		System.out.println("=====================Welcome to Our Web Search Engine========================");
 		System.out.println();
 		System.out.println("Please Enter your Website URl which you want to work with: ");
-		urlToWork = input.nextLine();
-		webCrawlerObj.crawlLinks(urlToWork, 0);
-		parseDatatoText.fetchFiles();
+//		urlToWork = input.nextLine();
 		System.out.println("Processing your request, Please wait for some time");
+//		webCrawlerObj.crawlLinks(urlToWork, 0);
+//		parseDatatoText.fetchFiles();
+		System.out.println("Done you are all good to go....");
 		System.out.println();
 		System.out.println();
 		System.out.println("1. Search for a Word: ");
@@ -45,17 +46,6 @@ public class Main {
 
 		while (selection!=5)
 		{
-			System.out.println();
-			System.out.println("1. Search for a Word: ");
-			System.out.println();
-			System.out.println("2. Most Frequently used Words: ");
-			System.out.println();
-			System.out.println("3. Store some Webpages for later use");
-			System.out.println();
-			System.out.println("4. Open up Web Page in browser");
-			System.out.println();
-			System.out.println("5. Exit");
-			System.out.println();	
 			
 		   switch(selection){
 		        case 1:
@@ -63,8 +53,9 @@ public class Main {
 		           String wordSearch;
 		   		   System.out.println("Enter the Word: ");
 		   		   wordSearch = input.nextLine();
-		           System.out.println("Searching for your word.....!!!");
 			   		bmObj.boyerMooreConcept(wordSearch);
+			           System.out.println("Searching for your word.....!!!");
+			   		System.out.println("Searching complete");
 		           break;
 
 		        case 2:
@@ -85,6 +76,18 @@ public class Main {
 		        	System.out.println("Oops, Please Enter valid Input ");
 		        
 		      }
+		   
+		   System.out.println();
+			System.out.println("1. Search for a Word: ");
+			System.out.println();
+			System.out.println("2. Most Frequently used Words: ");
+			System.out.println();
+			System.out.println("3. Store some Webpages for later use");
+			System.out.println();
+			System.out.println("4. Open up Web Page in browser");
+			System.out.println();
+			System.out.println("5. Exit");
+			System.out.println();		
 			  System.out.println("New choice: ");
 		      selection = input.nextInt();
 		 }
