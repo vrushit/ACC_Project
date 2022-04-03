@@ -11,6 +11,8 @@ import org.jsoup.Jsoup;
 public class PatternEval {
 
 	public static void main(String[] args) throws IOException {
+		System.out.println("================ Word Patterns==============================");
+		System.out.println();
 		
 		File direc = new File("src/saved_html_files");
 		
@@ -27,16 +29,13 @@ public class PatternEval {
 		 {
 	    	  if(allines[i].isFile()) {
 	    		  
-	    		  File myfile= new File("" + allines[i].getName());
-	    		  System.out.println(myfile);
+	    		  File myfile= new File("src/saved_html_files/" + allines[i].getName());
 	    		  
 	    		  org.jsoup.nodes.Document doc = Jsoup.parse(myfile,"UTF-8");
 	    		  String text = doc.text();
 	    		 
-	    		  //Compiling all patterns
 	    		  Pattern wpattern = Pattern.compile(wordspattern);
 	    	      	    	      
-	    	      //For words
 	    	      Matcher m1= wpattern.matcher(text);
 	    	      
 	    	      while (m1.find()) {
@@ -47,6 +46,8 @@ public class PatternEval {
 		 }
 	    
 	    System.out.println("Number of words pattern found = "+words);
+	    System.out.println();
+	    System.out.println("============================================================");
 	}
 
 }
