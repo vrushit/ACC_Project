@@ -1,3 +1,5 @@
+package concepts_used;
+
 import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
@@ -5,33 +7,66 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class frequencyAnalysis
+public class FrequencyAnalysis
 {
-     public static void main(String args[])
+    
+   public static void merge(int arr[], int l, int m, int r)
      {
-    	 final String regex = "\\b\\w{4,10}\\b";
-         final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
-          Map<String, Integer> wordMap = buildWordMap("src/text.txt");
-          List<Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
-          HashMap<Integer, String> mainMap = new HashMap<Integer, String>();
-          HashMap<Integer, String> terms = new HashMap<Integer, String>();
-          System.out.println("List of repeated word from file and their count");
-          
-          for (Map.Entry<String, Integer> entry : list)
-          {
-              Matcher matcher = pattern.matcher(entry.getKey());
-        	  while( matcher.find() ) {
-        		  terms.put(entry.getValue(), entry.getKey());
-              }
-        	  
-          }
-          int length = terms.size();
-          
-          System.out.println(terms.values().toArray()[length-1] + " " + terms.keySet().toArray()[length-1]);
-          
-          
-       
+         int n1 = m - l + 1;
+         int n2 = r - m;
+   
+         int L[] = new int[n1];
+         int R[] = new int[n2];
+   
+         for (int i = 0; i < n1; ++i)
+             L[i] = arr[l + i];
+         for (int j = 0; j < n2; ++j)
+             R[j] = arr[m + 1 + j];
+   
+
+         int i = 0, j = 0;
+   
+         int k = l;
+         while (i < n1 && j < n2) {
+             if (L[i] <= R[j]) {
+                 arr[k] = L[i];
+                 i++;
+             }
+             else {
+                 arr[k] = R[j];
+                 j++;
+             }
+             k++;
+         }
+   
+         while (i < n1) {
+             arr[k] = L[i];
+             i++;
+             k++;
+         }
+   
+         while (j < n2) {
+             arr[k] = R[j];
+             j++;
+             k++;
+         }
      }
+   
+    public static void sort(int arr[], int l, int r)
+     {
+         if (l < r) {
+             int m =l+ (r-l)/2;
+   
+             sort(arr, l, m);
+             sort(arr, m + 1, r);
+   
+             merge(arr, l, m, r);
+         }
+     }
+     
+     
+     
+     
      public static Map<String, Integer> buildWordMap(String fileName)
      {
           Map<String, Integer> wordMap = new HashMap<>();
@@ -77,5 +112,61 @@ public class frequencyAnalysis
                }
           });
           return list;
+     }
+     
+     public static void main(String args[])
+     {
+ 		File folder = new File("src/text_files");
+
+    	 final String regex = "\\b\\w{4,10}\\b";
+         final Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
+         HashMap<Integer, String> mainMap = new HashMap<Integer, String>();
+
+         for (File file : folder.listFiles())
+         {
+             Map<String, Integer> wordMap = buildWordMap(file + "");
+             List<Entry<String, Integer>> list = sortByValueInDecreasingOrder(wordMap);
+             HashMap<Integer, String> terms = new HashMap<Integer, String>();
+             
+             for (Map.Entry<String, Integer> entry : list)
+             {
+                 Matcher matcher = pattern.matcher(entry.getKey());
+           	  while( matcher.find() ) {
+           		  terms.put(entry.getValue(), entry.getKey());
+                 }
+             }
+             int length = terms.size();
+             
+             if(terms.values().toArray().length > 1)
+             {
+                 String str = (String) terms.values().toArray()[terms.size()-1];
+                 int key = (int) terms.keySet().toArray()[length-1];
+                 mainMap.put(key, str);
+                 
+             }
+            
+         }
+                  
+         Set<Integer> keys = mainMap.keySet();
+         Iterator<Integer> itr = keys.iterator();         
+         int[] array = new int[keys.size()];
+         for(int i =0;i<keys.size();i++)
+         {
+        	 array[i] = itr.next();
+         }
+         sort(array, 0, array.length - 1);
+         
+         System.out.println("Top Frequency for words: ");
+         System.out.println();
+         System.out.println(mainMap.get(array[array.length-1]));
+         System.out.println();
+         System.out.println(mainMap.get(array[array.length-2]));
+         System.out.println();
+         System.out.println(mainMap.get(array[array.length-3]));
+         System.out.println();
+         System.out.println(mainMap.get(array[array.length-4]));
+         System.out.println();
+         System.out.println(mainMap.get(array[array.length-5]));
+   
      }
 }
