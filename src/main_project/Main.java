@@ -1,6 +1,7 @@
 package main_project;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -8,13 +9,14 @@ import java.util.Scanner;
 import concepts_used.BoyerMooreSearch;
 import concepts_used.Caching;
 import concepts_used.Frequency;
+import concepts_used.OpenBrowser;
 import concepts_used.ParseData;
 import concepts_used.PatternEval;
 import concepts_used.WebCrawler;
 
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, URISyntaxException {
 
 		WebCrawler webCrawlerObj = new WebCrawler();
 		ParseData parseDatatoText = new ParseData();
@@ -22,6 +24,7 @@ public class Main {
 		BoyerMooreSearch bmObj = new BoyerMooreSearch();
 		Caching cacheObj = new Caching();
 		PatternEval patternObj = new PatternEval();
+		OpenBrowser openBrowser = new OpenBrowser();
 		
 		Scanner input = new Scanner(System.in);
 		String urlToWork;
@@ -87,9 +90,11 @@ public class Main {
 		        	break;
 		        
 		        case 5:
-		        	System.out.println("Please select the index Number of one of the pages mentioned below ");
-		        	HashMap<Integer, String> map = webCrawlerObj.mapUrl(); 
-		        	System.out.println(Arrays.asList(map));
+		        	System.out.println();
+		        	System.out.println("Enter the URL you want to open in Browser");
+		        	String urlLink = input.next();
+		        	System.out.println("Enjoy Web Browsing.......");
+		        	openBrowser.openInBrowser(urlLink);
 		        	break;
 		        	
 		        
