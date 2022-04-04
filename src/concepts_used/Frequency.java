@@ -9,6 +9,21 @@ import java.util.regex.Pattern;
 
 public class Frequency
 {
+	
+	  public static List<Entry<String, Integer>> sortByValueInDecreasingOrder(Map<String, Integer> wordMap)
+	     {
+	          Set<Entry<String, Integer>> entries = wordMap.entrySet();
+	          List<Entry<String, Integer>> list = new ArrayList<>(entries);
+	          Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
+	          {
+	               @Override
+	               public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
+	               {
+	                    return (o2.getValue()).compareTo(o1.getValue());
+	               }
+	          });
+	          return list;
+	     }
     
    public static void merge(int arr[], int l, int m, int r)
      {
@@ -72,7 +87,8 @@ public class Frequency
           BufferedReader br = new BufferedReader(new InputStreamReader(dis)))
           {
                Pattern pattern = Pattern.compile("\\s+");
-               String line = null; while ((line = br.readLine()) != null)
+               String line = null; 
+               while ((line = br.readLine()) != null)
                {
                     line = line.toLowerCase();
                     String[] words = pattern.split(line);
@@ -95,20 +111,7 @@ public class Frequency
           }
           return wordMap;
       }
-     public static List<Entry<String, Integer>> sortByValueInDecreasingOrder(Map<String, Integer> wordMap)
-     {
-          Set<Entry<String, Integer>> entries = wordMap.entrySet();
-          List<Entry<String, Integer>> list = new ArrayList<>(entries);
-          Collections.sort(list, new Comparator<Map.Entry<String, Integer>>()
-          {
-               @Override
-               public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2)
-               {
-                    return (o2.getValue()).compareTo(o1.getValue());
-               }
-          });
-          return list;
-     }
+   
      
      public static void frequencyAnalysis()
      {
@@ -151,6 +154,8 @@ public class Frequency
         	 array[i] = itr.next();
          }
          sort(array, 0, array.length - 1);
+         
+         
          System.out.println();
          System.out.println("==============================================================");
          System.out.println();

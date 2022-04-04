@@ -26,12 +26,5 @@ public class ParseData {
 			}
 		}
 	}
-	/*
-	 * just for testing public void searchWord(String word) { File textFolder=new
-	 * File("src/res/text"); File[] fileList = textFolder.listFiles();
-	 * BruteForceMatch bfm = new BruteForceMatch(); for(File file:fileList) { In
-	 * inpFile=new In(file.getAbsolutePath()); String data = inpFile.readAll();
-	 * System.out.println("Fount at:"+bfm.search1(word,data)+" in the File "+file.
-	 * getName()); } }
-	 */
+
 }

@@ -2,8 +2,6 @@ package concepts_used;
 
 import java.io.File;
 
-import textprocessing.BoyerMoore;
-//import textprocessing.BoyerMoore;
 import textprocessing.In;
 
 public class BoyerMooreSearch {	
@@ -15,7 +13,7 @@ public class BoyerMooreSearch {
 		System.out.println();
 		File folder = new File("src/text_files");
 //		String filesName[] = new String[100000];
-        BoyerMoore boyerMoore = new BoyerMoore(searchString);
+        Boyer_Moore_Class boyerMoore = new Boyer_Moore_Class(searchString);
         boolean found = false;
  		int j =0;
         for (File file : folder.listFiles())
