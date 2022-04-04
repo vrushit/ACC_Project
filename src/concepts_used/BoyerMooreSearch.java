@@ -12,6 +12,8 @@ public class BoyerMooreSearch {
 		System.out.println("====================Searching your Word================================");
 		System.out.println();
 		File folder = new File("src/text_files");
+		
+		
         Boyer_Moore_Class boyerMoore = new Boyer_Moore_Class(searchString);
         boolean found = false;
  		int j =0;
