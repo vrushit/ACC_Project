@@ -9,8 +9,9 @@ import java.util.regex.Pattern;
 import org.jsoup.Jsoup;
 
 public class PatternEval {
-
-	public static void main(String[] args) throws IOException {
+	
+	public static void patternEvaluate(String wordspattern) throws IOException
+	{
 		System.out.println("================ Word Patterns==============================");
 		System.out.println();
 		
@@ -20,8 +21,7 @@ public class PatternEval {
 	    
 	    //Taking input of pattern from the user
 	    Scanner sc=new Scanner(System.in);
-	    System.out.println("Enter the word to be searched: ");
-	    String wordspattern=sc.nextLine();
+	   
 	    
 	    int words=0;
 	    
@@ -49,5 +49,6 @@ public class PatternEval {
 	    System.out.println();
 	    System.out.println("============================================================");
 	}
+
 
 }

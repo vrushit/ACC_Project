@@ -9,6 +9,7 @@ import concepts_used.BoyerMooreSearch;
 import concepts_used.Caching;
 import concepts_used.Frequency;
 import concepts_used.ParseData;
+import concepts_used.PatternEval;
 import concepts_used.WebCrawler;
 
 public class Main {
@@ -20,6 +21,7 @@ public class Main {
 		HashMap<Integer, String> urlHMap = new HashMap<Integer, String>();
 		BoyerMooreSearch bmObj = new BoyerMooreSearch();
 		Caching cacheObj = new Caching();
+		PatternEval patternObj = new PatternEval();
 		
 		Scanner input = new Scanner(System.in);
 		String urlToWork;
@@ -79,7 +81,9 @@ public class Main {
 		        
 		        case 4:
 		        	System.out.println();
-		        	
+		        	 System.out.println("Enter the word to be searched for patterns: ");
+		     	    String wordspattern=input.next();
+		        	PatternEval.patternEvaluate(wordspattern);
 		        	break;
 		        
 		        case 5:
@@ -103,7 +107,9 @@ public class Main {
 			System.out.println();
 			System.out.println("4. Open up Web Page in browser");
 			System.out.println();
-			System.out.println("5. Exit");
+			System.out.println("5. Search for Word Patterns");
+			System.out.println();
+			System.out.println("6. Exit");
 			System.out.println();		
 			  System.out.println("New choice: ");
 		      selection = input.nextInt();
