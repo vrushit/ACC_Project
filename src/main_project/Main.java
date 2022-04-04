@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
-
 import concepts_used.BoyerMooreSearch;
 import concepts_used.Caching;
 import concepts_used.Frequency;
@@ -34,10 +33,10 @@ public class Main {
 		System.out.println("=====================Welcome to Our Web Search Engine========================");
 		System.out.println();
 		System.out.println("Please Enter your Website URl which you want to work with: ");
-//		urlToWork = input.nextLine();
-//		System.out.println("Processing your request, Please wait for some time");
-//		webCrawlerObj.crawlLinks(urlToWork, 0);
-//		parseDatatoText.fetchFiles();
+		urlToWork = input.nextLine();
+		System.out.println("Processing your request, Please wait for some time");
+		webCrawlerObj.crawlLinks(urlToWork, 0);
+		parseDatatoText.fetchFiles();
 		System.out.println("Done you are all good to go....");
 		System.out.println();
 		System.out.println();
