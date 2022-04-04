@@ -58,7 +58,6 @@ public class WebCrawler {
 					
 				}
 			} catch (Exception e) {
-//				System.err.println("Error: Message"+e.getMessage()+" For URL="+link);
 			}
 		}
 

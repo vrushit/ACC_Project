@@ -48,7 +48,7 @@ public class Main {
 		System.out.println();
 		System.out.println("4. Search for any Word Patterns");
 		System.out.println();
-		System.out.println("5. Open up Web Page in browser");
+		System.out.println("5. Open a URl in Web browser");
 		System.out.println();
 		System.out.println("6. Exit");
 		System.out.println();
@@ -109,9 +109,9 @@ public class Main {
 			System.out.println();
 			System.out.println("3. Store some Webpages for later use");
 			System.out.println();
-			System.out.println("4. Open up Web Page in browser");
+			System.out.println("4. Search for Word Patterns");
 			System.out.println();
-			System.out.println("5. Search for Word Patterns");
+			System.out.println("5. Open a URL in Web Browser");
 			System.out.println();
 			System.out.println("6. Exit");
 			System.out.println();		

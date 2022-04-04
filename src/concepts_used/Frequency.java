@@ -62,11 +62,7 @@ public class Frequency
    
              merge(arr, l, m, r);
          }
-     }
-     
-     
-     
-     
+     } 
      public static Map<String, Integer> buildWordMap(String fileName)
      {
           Map<String, Integer> wordMap = new HashMap<>();

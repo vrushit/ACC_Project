@@ -11,6 +11,4 @@ public class OpenBrowser {
 		Desktop desk = Desktop.getDesktop();
 		desk.browse(new URI(urlLink));
 	}
-
-
 }

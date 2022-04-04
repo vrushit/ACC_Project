@@ -32,15 +32,12 @@ public class BoyerMooreSearch {
  	   			if((var+i)<readStr.length())
  	   			{
  	   				found = true;
- 	   				temp = file.getName() + " at position " + (var+i);
+ 	   				temp ="Found in " +  file.getName() + " at position " + (var+i);
  	   				System.out.println(temp);
  	   				System.out.println();
  	   				break;
- 	   			}
-        	
+ 	   			}	
         }
-        	
- 
 	}
         if(found == false)
         {
@@ -48,8 +45,6 @@ public class BoyerMooreSearch {
         }
         System.out.println();
 		System.out.println("====================Searching Complete================================");
-
-
 
 }
 }
